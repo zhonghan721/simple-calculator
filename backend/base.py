@@ -20,10 +20,12 @@ def add():
         err = ""
     except ValueError as e:
         err = "Invalid value given. Please only input numbers."
+        return jsonify({"error": err}, 400)
     except Exception as e:
         err = "An error has occurred. Please only input numbers."
+        return jsonify({"error": err}, 400)
     
-    response_body = {"answer": ans, "error": err}
+    response_body = {"answer": ans}
     return jsonify({"data": response_body})
 
 @api.route("/subtract", methods=["POST"])
@@ -42,8 +44,10 @@ def subtract():
         err = ""
     except ValueError as e:
         err = "Invalid value given. Please only input numbers."
+        return jsonify({"error": err}), 400
     except Exception as e:
         err = "An error has occurred. Please only input numbers."
+        return jsonify({"error": err}), 400
     
-    response_body = {"answer": ans, "error": err}
+    response_body = {"answer": ans}
     return jsonify({"data": response_body})
