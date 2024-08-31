@@ -9,12 +9,12 @@ def add():
     ans = 0
     try:
         # get the value of the two fields
-        num_1 = request.form.get("num1") or "0"
-        num_2 = request.form.get("num2") or "0"
+        num_1 = request.form.get("num1").strip() or "0"
+        num_2 = request.form.get("num2").strip() or "0"
 
         # convert to float (throw error when there is an invalid value)
-        num_1 = float(num_1.strip())
-        num_2 = float(num_2.strip())
+        num_1 = float(num_1)
+        num_2 = float(num_2)
         
         ans = num_1 + num_2
         err = ""
@@ -33,12 +33,12 @@ def subtract():
     ans = 0
     try:
         # get the value of the two fields
-        num_1 = request.form.get("num1") or "0"
-        num_2 = request.form.get("num2") or "0"
+        num_1 = request.form.get("num1").strip() or "0"
+        num_2 = request.form.get("num2").strip() or "0"
 
         # convert to float (throw error when there is an invalid value)
-        num_1 = float(num_1.strip())
-        num_2 = float(num_2.strip())
+        num_1 = float(num_1)
+        num_2 = float(num_2)
 
         ans = num_1 - num_2
         err = ""
