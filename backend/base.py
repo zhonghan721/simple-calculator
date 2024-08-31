@@ -13,8 +13,8 @@ def add():
         num_2 = request.form.get("num2") or "0"
 
         # convert to float (throw error when there is an invalid value)
-        num_1 = float(num_1)
-        num_2 = float(num_2)
+        num_1 = float(num_1.strip())
+        num_2 = float(num_2.strip())
         
         ans = num_1 + num_2
         err = ""
@@ -37,8 +37,8 @@ def subtract():
         num_2 = request.form.get("num2") or "0"
 
         # convert to float (throw error when there is an invalid value)
-        num_1 = float(num_1)
-        num_2 = float(num_2)
+        num_1 = float(num_1.strip())
+        num_2 = float(num_2.strip())
 
         ans = num_1 - num_2
         err = ""
